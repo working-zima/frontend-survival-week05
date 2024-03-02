@@ -1,5 +1,14 @@
+import FilterableRestaurantTable from './components/FilterableRestaurantTable';
+import useFetchRestaurants from './hooks/useFetchRestaurants';
+
 export default function App() {
+  const restaurants = useFetchRestaurants();
+
   return (
-    <h1>푸드코트 키오스크</h1>
+    <div>
+      <FilterableRestaurantTable
+        restaurants={restaurants}
+      />
+    </div>
   );
 }
