@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import Restaurant from '../types/Restaurant';
-import filterRestaurants from '../utils/filterRestaurants';
-import extractCategories from '../utils/extractCategories';
+import Restaurant from '../../types/Restaurant';
+import filterRestaurants from '../../utils/filterRestaurants';
+import extractCategories from '../../utils/extractCategories';
 import RestaurantTable from './RestaurantTable';
-import SearchBar from './SearchBar';
+import SearchBar from '../searchBar/SearchBar';
 
 type FilterableRestaurantTableProps = {
   restaurants: Restaurant[]

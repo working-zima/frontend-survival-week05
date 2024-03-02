@@ -1,4 +1,4 @@
-import Restaurant from '../types/Restaurant';
+import Restaurant from '../../types/Restaurant';
 import Menu from './Menu';
 
 type RestaurantTableRow = {

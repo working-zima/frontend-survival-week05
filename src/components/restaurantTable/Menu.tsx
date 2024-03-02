@@ -1,6 +1,6 @@
 import { useLocalStorage } from 'usehooks-ts';
 
-import Food from '../types/Food';
+import Food from '../../types/Food';
 import MenuItem from './MenuItem';
 
 type MenuProps = {

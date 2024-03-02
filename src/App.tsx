@@ -2,8 +2,8 @@ import { useLocalStorage } from 'usehooks-ts';
 
 import Receipt from './types/Receipt';
 import useFetchRestaurants from './hooks/useFetchRestaurants';
-import Cart from './components/Cart';
-import FilterableRestaurantTable from './components/FilterableRestaurantTable';
+import Cart from './components/cart/Cart';
+import FilterableRestaurantTable from './components/restaurantTable/FilterableRestaurantTable';
 
 const emptyReceipt = {} as Receipt;
 
