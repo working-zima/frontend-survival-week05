@@ -1,5 +1,9 @@
+import { useState } from 'react';
+
 import Restaurant from '../types/Restaurant';
 import RestaurantTable from './RestaurantTable';
+import SearchBar from './SearchBar';
+import filterRestaurants from '../utils/filterRestaurants';
 
 type FilterableRestaurantTableProps = {
   restaurants: Restaurant[]
@@ -8,8 +12,14 @@ type FilterableRestaurantTableProps = {
 function FilterableRestaurantTable(
   { restaurants }: FilterableRestaurantTableProps,
 ) {
+  const [text, setText] = useState<string>('');
+  const filteredRestaurants = filterRestaurants(restaurants, { text });
+
   return (
-    <div><RestaurantTable restaurants={restaurants} /></div>
+    <div>
+      <SearchBar text={text} setText={setText} />
+      <RestaurantTable restaurants={filteredRestaurants} />
+    </div>
   );
 }
 
