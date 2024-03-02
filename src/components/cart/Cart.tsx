@@ -4,6 +4,7 @@ import Receipt from '../../types/Receipt';
 import Food from '../../types/Food';
 import useCreateOrder from '../../hooks/useCreateOrder';
 import CartItems from './CartItems';
+import OrderButton from './OrderButton';
 
 type CartProps = {
   setReceipt: (receipt: Receipt) => void;
@@ -28,7 +29,7 @@ function Cart({ setReceipt }: CartProps) {
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: '3rem' }}>
       <h2>점심 바구니</h2>
       <ul style={{ width: '20%' }}>
         {selectedFoods.map((food, index) => {
@@ -44,6 +45,10 @@ function Cart({ setReceipt }: CartProps) {
           );
         })}
       </ul>
+      <OrderButton
+        selectedFoods={selectedFoods}
+        handleClickOrder={handleClickOrder}
+      />
     </div>
   );
 }
