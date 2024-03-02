@@ -4,7 +4,7 @@ import Restaurant from '../types/Restaurant';
 import { BASE_URL } from '../constants/api';
 
 interface Restaurants {
-  [restaurants: string]: Restaurant
+  [restaurants: string]: Restaurant[];
 }
 
 function useFetchRestaurants() {
