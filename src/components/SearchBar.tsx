@@ -1,11 +1,16 @@
+import CategoryButtons from './CategoryButtons';
 import TextField from './TextField';
 
 type SearchBarProps = {
   text: string;
+  categories: string[];
   setText: (text: string) => void;
+  setCategory: (text: string) => void;
 }
 
-function SearchBar({ text, setText }: SearchBarProps) {
+function SearchBar({
+  text, categories, setText, setCategory,
+}: SearchBarProps) {
   return (
     <div>
       <TextField
@@ -13,6 +18,10 @@ function SearchBar({ text, setText }: SearchBarProps) {
         placeholder="식당 이름"
         text={text}
         setText={setText}
+      />
+      <CategoryButtons
+        categories={categories}
+        setCategory={setCategory}
       />
     </div>
   );

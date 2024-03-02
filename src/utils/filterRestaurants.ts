@@ -6,19 +6,26 @@ function normalize(text: string) {
 
 type FilterConditions = {
   text: string;
+  category: string
 }
 
 function filterRestaurants(
   restaurants: Restaurant[],
-  { text }: FilterConditions,
+  { text, category }: FilterConditions,
 ) {
+  const match = (restaurant: Restaurant) => (restaurant.category === category);
+
+  const filteredRestaurants = category === '전체'
+    ? restaurants
+    : restaurants.filter(match);
+
   const query = normalize(text);
 
   if (!query) {
-    return restaurants;
+    return filteredRestaurants;
   }
 
-  return restaurants.filter(
+  return filteredRestaurants.filter(
     (restaurant: Restaurant) => (normalize(restaurant.name).includes(query)),
   );
 }

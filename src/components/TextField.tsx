@@ -21,6 +21,7 @@ function TextField({
     <div>
       <label
         htmlFor={id.current}
+        style={{ paddingRight: '1rem' }}
       >
         {label}
       </label>
