@@ -1,29 +1,25 @@
-import { ButtonHTMLAttributes } from 'react';
 import Food from '../../types/Food';
+import MenuIntheCart from './MenuIntheCart';
 
-type CartItem = {
-  food: Food
-} & ButtonHTMLAttributes<HTMLButtonElement>
-
-function CartItem({ food, children }: CartItem) {
-  const { name, price } = food;
-
-  return (
-    <li
-      style={{
-        display: 'flex',
-        paddingBlock: '.5rem',
-      }}
-    >
-      <span style={{ margin: '0 auto' }}>
-        {name}
-        (
-        {price.toLocaleString()}
-        원)
-      </span>
-      {children}
-    </li>
-  );
+type CartItemProps = {
+  food: Food;
+  index: number;
+  handleClickCancel: (index: number) => void;
 }
 
-export default CartItem;
+export default function CartItem(
+  { food, index, handleClickCancel }: CartItemProps,
+) {
+  return (
+    <MenuIntheCart food={food}>
+      <button
+        style={{ marginLeft: '0.5rem' }}
+        name={`#${food.name}`}
+        type="button"
+        onClick={() => handleClickCancel(index)}
+      >
+        취소
+      </button>
+    </MenuIntheCart>
+  );
+}

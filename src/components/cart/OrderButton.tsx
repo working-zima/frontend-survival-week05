@@ -1,13 +1,13 @@
 import Food from '../../types/Food';
 import calculateTotalPrice from '../../utils/calculateTotalPrice';
 
-type OrderButton = {
+type OrderButtonProps = {
   selectedFoods: Food[];
   handleClickOrder: () => void;
 }
 
 function OrderButton(
-  { selectedFoods, handleClickOrder }: OrderButton,
+  { selectedFoods, handleClickOrder }: OrderButtonProps,
 ) {
   const totalPrice = calculateTotalPrice(selectedFoods);
   return (

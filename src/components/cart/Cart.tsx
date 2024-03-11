@@ -3,7 +3,7 @@ import { useLocalStorage } from 'usehooks-ts';
 import Receipt from '../../types/Receipt';
 import Food from '../../types/Food';
 import useCreateOrder from '../../hooks/useCreateOrder';
-import CartItems from './CartItems';
+import CartItems from './CartItem';
 import OrderButton from './OrderButton';
 
 type CartProps = {
