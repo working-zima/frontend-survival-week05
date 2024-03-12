@@ -7,7 +7,7 @@ const BASE_URL = 'http://localhost:3000';
 const handlers = [
   rest.get(`${BASE_URL}/restaurants`, (req, res, ctx) => {
     const { restaurants } = fixtures;
-
+    console.log('check: ', req);
     return res(ctx.status(200), ctx.json({ restaurants }));
   }),
 ];
